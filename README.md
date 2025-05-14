@@ -1,6 +1,20 @@
-# Anomaly Ontology (AO)
+# Anomaly Ontologies
 
-This repository hosts the **Anomaly Ontology**, a formal BFO- and CCO-aligned ontology for modeling the semantic lifecycle of anomalies in data-driven systems. It provides a rigorous conceptual framework for representing anomalies from the moment of their detection to the point of their resolution.
+This repository hosts the **Anomaly Ontologies**, a collection of formal, BFO- and CCO-aligned ontologies and artifacts that support semantic modeling of anomalies and their resolution lifecycle in data-driven systems.
+
+Currently, the repository includes:
+
+- The **Anomaly Ontology**, which formally represents anomalies as temporally bounded semantic entities.
+- The accompanying **SHACL node shape file** for validating anomaly-related instance data.
+
+This repository will also soon include:
+
+- The **Anomaly Process Ontology (APO)**, which will define the resolution workflows, subprocesses, and decision points associated with anomaly handling.
+- Additional artifacts such as usage examples, diagrams, and SPARQL query templates.
+
+Together, these resources support rigorous, explainable, and machine-readable anomaly reasoning frameworks for use in cybersecurity, ISR, AI validation, and other high-assurance domains.
+
+## Anomaly Ontology
 
 Version: `anomaly-ontology.05132025.ttl`  
 SHACL Shapes: `anomaly-ontology-node-shapes.ttl`  
