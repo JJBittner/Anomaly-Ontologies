@@ -1,0 +1,134 @@
+@prefix aro: <http://example.org/anomaly-ontology#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix bfo: <http://purl.obolibrary.org/obo/BFO_> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://example.org/anomaly-ontology#> .
+
+<http://example.org/anomaly-ontology-node-shapes> rdf:type owl:Ontology ;
+                                                  owl:versionIRI <http://example.org/2025-05-13/nomaly-ontology-node-shapes> ;
+                                                  <http://purl.org/dc/elements/1.1/contributor> "John H F Bittner II"@en ;
+                                                  rdfs:comment "This ontology defines SHACL node shapes for validating instances of the Anomaly Ontology. It enforces structural and semantic constraints on key classes such as Anomaly, Unresolved Anomaly Information, Resolved Anomaly Information, Anomaly Lifecycle, and Bounded Temporality. These shapes ensure alignment with the Basic Formal Ontology (BFO 2020) and Common Core Ontologies (CCO 2.0) by specifying required relationships (e.g., is_about, has_input, has_output), cardinality constraints, and type expectations. This validation layer supports consistent reasoning and robust instantiation of anomaly-related data across detection, resolution, and knowledge integration workflows."@en ;
+                                                  rdfs:label "Anomaly Ontology Node Shapes"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/shacl#NodeShape
+<http://www.w3.org/ns/shacl#NodeShape> rdf:type owl:Class .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/anomaly-ontology#AerospaceDetectionModelShape
+:AerospaceDetectionModelShape rdf:type owl:NamedIndividual ,
+                                       sh:NodeShape ;
+                              sh:property [ sh:class :ARO_0000020 ;
+                                            sh:message "An Aerospace Detection Model must the bearer of a spatial anomaly detection function like kNN."@en ;
+                                            sh:minCount 1 ;
+                                            sh:path <http://purl.obolibrary.org/obo/BFO_0000196>
+                                          ] ;
+                              sh:targetClass :ARO_0000030 .
+
+
+###  http://example.org/anomaly-ontology#CyberDetectionModelShape
+:CyberDetectionModelShape rdf:type owl:NamedIndividual ,
+                                   sh:NodeShape ;
+                          sh:property [ sh:class :ARO_0000021 ;
+                                        sh:message "A Cyber Detection Model must bear a COPOD or other cyber-specific function."@en ;
+                                        sh:minCount 1 ;
+                                        sh:path <http://purl.obolibrary.org/obo/BFO_0000196>
+                                      ] ;
+                          sh:targetClass :ARO_0000025 .
+
+
+###  http://example.org/anomaly-ontology#DefenseDetectionModelShape
+:DefenseDetectionModelShape rdf:type owl:NamedIndividual ,
+                                     sh:NodeShape ;
+                            sh:property [ sh:class :ARO_0000021 ,
+                                                   :ARO_0000033 ;
+                                          sh:message "A Defense Detection Model must be the bearer of a Copula-Based Outlier Detection Function or Distribution-Aware Detection Function."@en ;
+                                          sh:minCount 1 ;
+                                          sh:path <http://purl.obolibrary.org/obo/BFO_0000196>
+                                        ] ;
+                            sh:targetClass :ARO_0000032 .
+
+
+###  http://example.org/anomaly-ontology#EnergyDetectionModelShape
+:EnergyDetectionModelShape rdf:type owl:NamedIndividual ,
+                                    sh:NodeShape ;
+                           sh:property [ sh:class :ARO_0000024 ;
+                                         sh:message "An Energy Detection Model must be the bearer of a Histogram-Based Outlier Score Detection Function."@en ;
+                                         sh:minCount 1 ;
+                                         sh:path <http://purl.obolibrary.org/obo/BFO_0000196>
+                                       ] ;
+                           sh:targetClass :ARO_0000031 .
+
+
+###  http://example.org/anomaly-ontology#EnvironmentalDetectionModelShape
+:EnvironmentalDetectionModelShape rdf:type owl:NamedIndividual ,
+                                           sh:NodeShape ;
+                                  sh:property [ sh:class :ARO_0000020 ;
+                                                sh:message "An Environmental Detection Model must the bearer of a kNNk-Nearest Neighbors Algorithm Detection Function."@en ;
+                                                sh:minCount 1 ;
+                                                sh:path <http://purl.obolibrary.org/obo/BFO_0000196>
+                                              ] ;
+                                  sh:targetClass :ARO_0000028 .
+
+
+###  http://example.org/anomaly-ontology#FinancialDetectionModelShape
+:FinancialDetectionModelShape rdf:type owl:NamedIndividual ,
+                                       sh:NodeShape ;
+                              sh:property [ sh:class :ARO_0000024 ;
+                                            sh:message "A Financial Detection Model must the bearer of a Histogram-Based Outlier Score Detection Function for anomaly scoring."@en ;
+                                            sh:minCount 1 ;
+                                            sh:path <http://purl.obolibrary.org/obo/BFO_0000196>
+                                          ] ;
+                              sh:targetClass :ARO_0000027 .
+
+
+###  http://example.org/anomaly-ontology#IndustrialDetectionModelShape
+:IndustrialDetectionModelShape rdf:type owl:NamedIndividual ,
+                                        sh:NodeShape ;
+                               sh:property [ sh:class :ARO_0000023 ;
+                                             sh:message "An Industrial Detection Model must be the bearer of a Local Outlier Factor Detection Function."@en ;
+                                             sh:minCount 1 ;
+                                             sh:path <http://purl.obolibrary.org/obo/BFO_0000196>
+                                           ] ;
+                               sh:targetClass :ARO_0000029 .
+
+
+###  http://example.org/anomaly-ontology#MedicalDetectionModelShape
+:MedicalDetectionModelShape rdf:type owl:NamedIndividual ,
+                                     sh:NodeShape ;
+                            sh:property [ sh:class :ARO_0000034 ;
+                                          sh:message "A Medical Detection Model must be the bearer of a Medical Outlier Detection Function."@en ;
+                                          sh:minCount 1 ;
+                                          sh:or [ ] ;
+                                        sh:path <http://purl.obolibrary.org/obo/BFO_0000196>
+                            ] ;
+sh:targetClass :ARO_0000026 .
+
+
+[ sh:class :ARO_0000022
+] .
+
+[ sh:class :ARO_0000023
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
