@@ -31,6 +31,43 @@
 ###  http://www.w3.org/ns/shacl#NodeShape
 <http://www.w3.org/ns/shacl#NodeShape> rdf:type owl:Class .
 
+### Epistemic State Hierarchy ###
+aro:ARO_9000000 rdf:type owl:Class ;
+    rdfs:subClassOf bfo:BFO_0000031 ; # GDC
+    rdfs:label "Epistemic State"@en ;
+    skos:definition "A Generically Dependent Continuant that represents the knowledge status of an observation or anomaly with respect to an ontological axiom base."@en ;
+    skos:prefLabel "Epistemic State"@en .
+
+aro:ARO_9000001 rdf:type owl:Class ;
+    rdfs:subClassOf aro:ARO_9000000 ;
+    rdfs:label "Known Known"@en ;
+    skos:definition "An epistemic state indicating the event violates a known axiom and is thus a confirmed anomaly."@en ;
+    skos:prefLabel "Known Known"@en .
+
+aro:ARO_9000002 rdf:type owl:Class ;
+    rdfs:subClassOf aro:ARO_9000000 ;
+    rdfs:label "Known Unknown"@en ;
+    skos:definition "An epistemic state where the system cannot match the event to existing axioms, indicating a semantic gap requiring further classification."@en ;
+    skos:prefLabel "Known Unknown"@en .
+
+aro:ARO_9000003 rdf:type owl:Class ;
+    rdfs:subClassOf aro:ARO_9000000 ;
+    rdfs:label "Unknown Unknown"@en ;
+    skos:definition "An epistemic state representing a condition or event not currently detected or understood by the system."@en ;
+    skos:prefLabel "Unknown Unknown"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/anomaly-ontology/hasEpistemicState
+aro:hasEpistemicState rdf:type owl:ObjectProperty ;
+    rdfs:domain bfo:BFO_0000031 ;
+    rdfs:range aro:ARO_9000000 ;
+    rdfs:label "has epistemic state"@en ;
+    skos:definition "Relates an entity or observation to an epistemic classification reflecting its alignment with known axioms or lack thereof."@en ;
+    skos:prefLabel "has epistemic state"@en .
+
 #################################################################
 #    Individuals
 #################################################################
