@@ -188,7 +188,7 @@ Use Jena SHACL CLI or TopQuadrant SHACL API to test instances against shapes.
 
 - `anomaly-ontology.05132025.ttl` – Main ontology
 - `anomaly-ontology-node-shapes.ttl` – SHACL node shapes
-- `anomaly-process-ontology/` *(planned)* – Anomaly Process Ontology for reasoning over resolution workflows
+- `anomaly-process-ontology.05142025.ttl/` – Anomaly Process Ontology for reasoning over resolution workflows
 - `examples/` *(planned)* – Usage examples for anomaly modeling and validation
 - `docs/` *(planned)* – Diagrams and documentation
 
