@@ -26,8 +26,9 @@ The APO models:
 - `cco:has_input`
 - `cco:has_output`
 - `cco:is_about`
-- `apo:APO_0000053` – marks start of bounded temporality interval
-- `apo:APO_0000054` – marks end of bounded temporality interval
+- `has bounded temporality interval`
+- `marks start of bounded temporality interval`
+- `marks end of bounded temporality interval` 
 
 ## Dependencies
 - [Anomaly Continuant Ontology (ACO)](../Anomaly-Ontology)
@@ -38,98 +39,14 @@ The APO models:
 - J. Bittner ([JJBittner](https://github.com/JJBittner))  
 - T. Coleman ([TimothyWColeman](https://github.com/TimothyWColeman))
 
-## Design Principles
-
-- **BFO 2020 Compliant** – top-level formal distinctions (continuant/occurrent)
-- **CCO 2.0 Aligned** – leverages CCO modules (Information, Time, Quality)
-- **OWL 2 DL Valid** – ensures compatibility with automated reasoning
-- **SHACL-Enabled** – validates instance data conformance
-- **Extensible** – designed for integration with APO and domain overlays
-
----
-
-## Editors
-
-- [Protégé](https://protege.stanford.edu/)
-- [TopBraid Composer](https://www.topquadrant.com/products/topbraid-composer/)
-
----
-
-## Reasoners
-
-- [HermiT](http://www.hermit-reasoner.com/) – for expressive OWL DL reasoning  
-- [ELK](https://github.com/liveontologies/elk-reasoner) – for scalable classification  
-- [Jena SHACL](https://jena.apache.org/documentation/shacl/) – for validating SHACL shapes
-
----
-
-## Usage Instructions
-
-### Loading in Protégé
-
-- File > Open > Select `.ttl`
-- Check for active reasoner: HermiT or ELK
-
-### Validating with SHACL
-
-Use Jena SHACL CLI or TopQuadrant SHACL API to test instances against shapes.
-
 ## Version and Status
 
-**Version:** `anomaly-ontology.05132025.ttl`  
+**Version:** `anomaly-process-ontology.05142025.ttl`  
 **Status:** Draft  
 **License:** CC-BY 4.0  
 **Maintainer:** [JJBittner](https://github.com/JJBittner)
 
----
+## Citation
+If using this ontology, please cite:
 
-## Repository Structure
-
-- `anomaly-ontology.05132025.ttl` – Main ontology
-- `anomaly-ontology-node-shapes.ttl` – SHACL node shapes
-- `anomaly-process-ontology.05142025.ttl/` – Anomaly Process Ontology for reasoning over resolution workflows
-- `examples/` *(planned)* – Usage examples for anomaly modeling and validation
-- `docs/` *(planned)* – Diagrams and documentation
-
----
-
-## Usage Instructions
-
-### Loading in Protégé
-
-- Open Protégé
-- File > Open > Select `.ttl`
-- Activate a reasoner such as HermiT or ELK
-
-### Validating with SHACL
-
-- Use the Jena SHACL CLI or TopQuadrant SHACL API
-- Load your instance data and run it against `anomaly-ontology-node-shapes.ttl`
-
----
-
-## Future Work / Roadmap
-
-- Integration with Anomaly Process Ontology (APO)
-- SPARQL query templates and validation scripts
-- Formal alignment with OBO Foundry principles (optional)
-- Examples for ISR, Cyber, and Environmental Safety domains
-
----
-
-## Metadata (for ontology header)
-
-```ttl
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-
-<https://github.com/JJBittner/anomaly-ontology>
-    a owl:Ontology ;
-    dcterms:title "Anomaly Ontology" ;
-    dcterms:contributor "J. Bittner" ;
-    dcterms:contributor "T. Coleman" ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:description "A BFO- and CCO-aligned ontology for representing anomalies and their resolution lifecycle." .
-
-
-
+> J. Bittner, T. Coleman. *Anomaly Process Ontology: A Formal Representation of Anomaly Resolution in Dynamic Systems. https://github.com/JJBittner/Anomaly-Ontologies
