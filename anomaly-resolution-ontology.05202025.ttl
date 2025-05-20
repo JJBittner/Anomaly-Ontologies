@@ -20,7 +20,7 @@
                                                                                           "Timothy W. Coleman"@en ;
                                                    <http://purl.org/dc/terms/creator> "John H F Bittner II"@en ;
                                                    rdfs:label "Anomaly Resolution Ontology"@en ;
-                                                   skos:definition "An ontology for representing anomalies as generically dependent continuants within bounded temporality, supporting the lifecycle of unresolved and resolved semantic states."@en .
+                                                   skos:definition "An ontology for representing anomalies as generically dependent continuants and the processes that resolve them, integrating both continuant and occurrent entities to support the full lifecycle of anomaly detection, interpretation, and resolution within bounded temporality."@en .
 
 #################################################################
 #    Annotation properties
