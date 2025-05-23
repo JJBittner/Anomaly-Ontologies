@@ -79,12 +79,13 @@ sh:targetClass rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://example.org/anomaly-resolution-ontology/ARO_0000045
-aro:ARO_0000045 rdf:type owl:ObjectProperty ,
-                         owl:IrreflexiveProperty ;
-                rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000031> ;
+aro:ARO_0000045 rdf:type owl:ObjectProperty ;
+                owl:inverseOf aro:ARO_0000069 ;
+                rdf:type owl:IrreflexiveProperty ;
+                rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000002> ;
                 rdfs:range aro:ARO_0000042 ;
-                rdfs:label "has epistemic state"@en ;
-                skos:definition "x has an Epistemic State y iff x is an instance of generically dependent continuant, y is an instance of Epistemic State, and y represents the interpretive status of x during a Bounded Temporality Interval."@en .
+                rdfs:label "has interpretive status"@en ;
+                skos:definition "x has interpretive status y iff x is an instance of continuant, y is an instance of Epistemic State, and y represents the interpretive status of x during some Bounded Temporality Interval."@en .
 
 
 ###  http://example.org/anomaly-resolution-ontology/ARO_0000047
@@ -139,6 +140,15 @@ aro:ARO_0000054 rdf:type owl:ObjectProperty ;
                 skos:definition "x marks end of bounded temporality interval y iff x is an instance of bfo:process, y is an instance of temporal interval, and x is the terminating event or process that causes y to end."@en .
 
 
+###  http://example.org/anomaly-resolution-ontology/ARO_0000069
+aro:ARO_0000069 rdf:type owl:ObjectProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain aro:ARO_0000042 ;
+                rdfs:range <http://purl.obolibrary.org/obo/BFO_0000002> ;
+                rdfs:label "is interpretive status of"@en ;
+                skos:definition "x is interpretive status of y iff x is an instance of Epistemic State, y is an instance of continuant, and x characterizes the interpretive or referential uncertainty of y during some Bounded Temporality Interval."@en .
+
+
 ###  http://purl.obolibrary.org/obo/BFO_0000108
 <http://purl.obolibrary.org/obo/BFO_0000108> rdf:type owl:ObjectProperty .
 
@@ -149,7 +159,7 @@ aro:ARO_0000054 rdf:type owl:ObjectProperty ;
 
 ###  http://example.org/anomaly-resolution-ontology/ARO_0000001
 aro:ARO_0000001 rdf:type owl:Class ;
-                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ,
+                rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000958> ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty aro:ARO_0000045 ;
                                   owl:someValuesFrom aro:ARO_0000042
@@ -161,9 +171,13 @@ aro:ARO_0000001 rdf:type owl:Class ;
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000108> ;
                                   owl:someValuesFrom aro:ARO_0000059
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001808> ;
+                                  owl:someValuesFrom aro:ARO_0000068
                                 ] ;
                 rdfs:label "Anomaly"@en ;
-                skos:definition "A Generically Dependent Continuant that inheres in some entity and represents a deviation from an expected norm within a specified context."@en ;
+                skos:definition "A Information Content Entity that inheres in some entity and represents a deviation from an expected norm within a specified context."@en ;
                 skos:prefLabel "Anomaly"@en .
 
 
@@ -713,6 +727,27 @@ aro:ARO_0000067 rdf:type owl:Class ;
                 skos:altLabel "EEE"@en ;
                 skos:definition "An Act of Anomaly Resolution in which an Agent achieves referential clarity by identifying the actual entity or cause underlying the Anomaly, thereby eliminating its unresolved status."@en ;
                 skos:prefLabel "Epistemic Enlightenment Event"@en .
+
+
+###  http://example.org/anomaly-resolution-ontology/ARO_0000068
+aro:ARO_0000068 rdf:type owl:Class ;
+                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000141> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty aro:ARO_0000045 ;
+                                  owl:someValuesFrom aro:ARO_0000042
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000108> ;
+                                  owl:someValuesFrom aro:ARO_0000059
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://www.commoncoreontologies.org/ont00001801> ;
+                                  owl:someValuesFrom aro:ARO_0000001
+                                ] ;
+                rdfs:label "Epistemically Immaterial Entity"@en ;
+                skos:definition "An epistemically immaterial entity is an immaterial entity that represents a context-dependent locus of semantic uncertainty, prior to the identification of any material or processual referent."@en ;
+                skos:example "The unknown source of a heat signature before identification."@en ;
+                skos:prefLabel "Epistemically Immaterial Entity"@en .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000008
