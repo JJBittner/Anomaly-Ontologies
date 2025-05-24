@@ -87,8 +87,9 @@ The Anomaly Resolution Ontology (ARO) provides a formal framework for modeling a
 ## Authors
 - J. Bittner ([JJBittner](https://github.com/JJBittner))  
 - T. Coleman ([TimothyWColeman](https://github.com/TimothyWColeman))
+- J. Ravenel ([jravenel]( https://github.com/jravenel))    
 
 ## Citation
 If using this ontology, please cite:
 
-> J. Bittner, T. Coleman. *Anomaly Resolution Ontology: Semantic Modeling of Temporally Bounded Anomalies and Their Resolution Lifecycles.* https://github.com/JJBittner/Anomaly-Ontologies
+> J. Bittner, T. Coleman, J. Ravenel.  *Anomaly Resolution Ontology: Ontology accompanying the JOWO 2025 paper: "From Shadows to Resolution"* https://github.com/JJBittner/Anomaly-Resolution-Ontology
