@@ -1,0 +1,103 @@
+@prefix faro: <http://example.org/financial-anomaly-resolution-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/financial-anomaly-resolution-ontology/> .
+
+<http://example.org/financial-anomaly-resolution-ontology/> rdf:type owl:Ontology ;
+                                                             owl:versionIRI <http://example.org/2025-05-27/financial-anomaly-resolution-ontology/> ;
+                                                             owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl> ,
+                                                                         <http://example.org/anomaly-resolution-ontology/> ;
+                                                             <http://purl.org/dc/elements/1.1/license> "https://creativecommons.org/licenses/by-nc/4.0/" ;
+                                                             <http://purl.org/dc/terms/creator> "John H F Bittner II - john.h.bittner@gmail.com" ;
+                                                             <http://purl.org/dc/terms/title> "Financial Anomaly Resolution Ontology (FARO)"@en ;
+                                                             rdfs:comment "This ontology is licensed for academic and research use under CC-BY-NC 4.0. Commercial use requires a separate license."@en ;
+                                                             rdfs:label "Financial Anomaly Resolution Ontology (FARO)"@en ;
+                                                             <http://www.w3.org/2004/02/skos/core#definition> "An ontology for representing financial anomalies as information content entities that reflect unresolved, unexplained, or suspicious activity within economic or transactional contexts. FARO models the processes by which such anomalies are detected, evaluated, and resolved, including pattern recognition, heuristic risk assessment, and investigative classification. It supports the full lifecycle of epistemic uncertainty within bounded temporality, culminating in resolution through an Epistemic Enlightenment Event."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+<http://www.w3.org/2004/02/skos/core#scopeNote> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/anomaly-resolution-ontology/ARO_0000001
+<http://example.org/anomaly-resolution-ontology/ARO_0000001> rdf:type owl:Class .
+
+
+###  http://example.org/anomaly-resolution-ontology/ARO_0000005
+<http://example.org/anomaly-resolution-ontology/ARO_0000005> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#FARO_0000001
+:FARO_0000001 rdf:type owl:Class ;
+              rdfs:subClassOf <http://example.org/anomaly-resolution-ontology/ARO_0000001> ;
+              rdfs:label "Financial Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "An Anomaly representing unresolved content involving deviations in structured systems of resource allocation, value exchange, or economic coordination, where the underlying cause is not yet determined."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Financial Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#scopeNote> "This class applies to unexplained changes or irregularities in quantified exchanges, timing patterns, or system interactions that regulate the movement or control of exchangeable resources. It persists until the deviation is attributed to a known actor, rule, or systemic condition within the relevant evaluative framework."@en .
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#FARO_0000002
+:FARO_0000002 rdf:type owl:Class ;
+              rdfs:subClassOf :FARO_0000001 ;
+              rdfs:label "Account Behavior Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A Financial Anomaly representing unresolved content involving deviations in the timing, frequency, or structure of activities associated with the management or control of exchangeable resources."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Account Behavior Anomaly"@en .
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#FARO_0000003
+:FARO_0000003 rdf:type owl:Class ;
+              rdfs:subClassOf :FARO_0000001 ;
+              rdfs:label "Market Pattern Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A Financial Anomaly representing unresolved content involving unexpected changes in temporal patterns or quantitative indicators within systems of distributed exchange, where the underlying cause is not yet identified."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Market Pattern Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#scopeNote> "This includes sudden shifts in aggregated activity metrics, volume irregularities, or metric fluctuations in coordinated systems that regulate value, rights, or ownership. The anomaly exists until such patterns are attributed to a structural, strategic, or external factor within the relevant evaluative framework."@en .
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#FARO_0000004
+:FARO_0000004 rdf:type owl:Class ;
+              rdfs:subClassOf :FARO_0000001 ;
+              rdfs:label "Transaction Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A Financial Anomaly representing unresolved content involving deviations in value exchange, resource allocation, or account-associated activities, identified through evaluative processes in economic or organizational systems."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Transaction Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#scopeNote> "This class applies to unexplained patterns or events observed in structured systems of economic coordination, such as unexpected timing, magnitude, or frequency of resource movement. It persists until the deviation is attributed to a known process, actor, or structural explanation within the economic context."@en .
+
+
+###  http://www.semanticweb.org/owl/owlapi/turtle#FARO_0000005
+:FARO_0000005 rdf:type owl:Class ;
+              rdfs:subClassOf <http://example.org/anomaly-resolution-ontology/ARO_0000005> ;
+              rdfs:label "Financial Detection Model"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A Detection Model Artifact applied to financial transactions, ledgers, or markets to detect suspicious or outlier behavior."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Financial Detection Model"@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,77 @@
+@prefix : <http://www.semanticweb.org/jbittner/ontologies/2025/4/untitled-ontology-746/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/jbittner/ontologies/2025/4/untitled-ontology-746/> .
+
+<http://example.org/cyber-anomaly-resolution-ontology/> rdf:type owl:Ontology ;
+                                                         owl:versionIRI <http://example.org/2025-05-27/cyber-anomaly-resolution-ontology/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+<http://www.w3.org/2004/02/skos/core#scopeNote> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/anomaly-resolution-ontology/ARO_0000005
+<http://example.org/anomaly-resolution-ontology/ARO_0000005> rdf:type owl:Class .
+
+
+###  http://example.org/cyber-anomaly-resolution-ontology/CARO_0000001
+:CARO_0000001 rdf:type owl:Class ;
+              rdfs:label "Cyber Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "An Anomaly representing unresolved content involving unexpected activity, data states, or system interactions within computational environments, where the cause or referent event is not yet identified."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Cyber Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#scopeNote> "This class applies to content derived from digital infrastructure such as software processes, user access logs, device communications, or data integrity checks, when observed outcomes deviate from operational expectations and remain unexplained at the time of detection. It exists until the event is attributed to a known configuration, user action, or external factor."@en .
+
+
+###  http://example.org/cyber-anomaly-resolution-ontology/CARO_0000002
+:CARO_0000002 rdf:type owl:Class ;
+              rdfs:subClassOf :CARO_0000001 ;
+              rdfs:label "Authentication Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A Cyber Anomaly representing unresolved identity-related events, such as login attempts from unusual locations or unauthorized access patterns that deviate from expected user behavior."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Authentication Anomaly"@en .
+
+
+###  http://example.org/cyber-anomaly-resolution-ontology/CARO_0000003
+:CARO_0000003 rdf:type owl:Class ;
+              rdfs:subClassOf :CARO_0000001 ;
+              rdfs:label "Network Traffic Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A Cyber Anomaly representing unresolved content derived from unexpected or suspicious patterns in data flow across digital networks, such as abnormal packet volumes or access attempts."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Network Traffic Anomaly"@en .
+
+
+###  http://example.org/cyber-anomaly-resolution-ontology/CARO_0000004
+:CARO_0000004 rdf:type owl:Class ;
+              rdfs:subClassOf :CARO_0000001 ;
+              rdfs:label "System Behavior Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A Cyber Anomaly representing unresolved content involving unexpected system-level operations or state transitions that cannot be explained by known configurations, code execution sequences, or runtime conditions."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "System Behavior Anomaly"@en ;
+              <http://www.w3.org/2004/02/skos/core#scopeNote> "This includes cases such as unexplained shutdowns, unauthorized process spawning, or abnormal resource usage, where the system’s observed operations diverge from modeled expectations. It persists until the causal mechanism or referent event is identified."@en .
+
+
+###  http://example.org/cyber-anomaly-resolution-ontology/CARO_0000005
+:CARO_0000005 rdf:type owl:Class ;
+              rdfs:subClassOf <http://example.org/anomaly-resolution-ontology/ARO_0000005> ;
+              rdfs:label "Cyber Detection Model"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A Detection Model Artifact trained or configured to identify anomalies in cyber or information systems."@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Cyber Detection Model"@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

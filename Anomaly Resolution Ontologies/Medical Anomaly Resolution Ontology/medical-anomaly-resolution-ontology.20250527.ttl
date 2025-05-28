@@ -1,0 +1,97 @@
+@prefix : <http://example.org/medical-anomaly-resolution-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix maro: <http://example.org/medical-anomaly-resolution-ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/medical-anomaly-resolution-ontology/> .
+
+<http://example.org/medical-anomaly-resolution-ontology/> rdf:type owl:Ontology ;
+                                                           owl:versionIRI <http://example.org/2025-05-27/medical-anomaly-resolution-ontology/> ;
+                                                           owl:imports <http://example.org/anomaly-resolution-ontology/> ;
+                                                           <http://purl.org/dc/elements/1.1/license> "https://creativecommons.org/licenses/by-nc/4.0" ;
+                                                           <http://purl.org/dc/terms/creator> "John H F Bittner II - john.h.bittner@gmail.com" ;
+                                                           <http://purl.org/dc/terms/title> "Medical Anomaly Resolution Ontology (MARO)"@en ;
+                                                           rdfs:label "Medical Anomaly Resolution Ontology (MARO)"@en ,
+                                                                      "This ontology is licensed for academic and research use under CC-BY-NC 4.0. Commercial use requires a separate license."@en ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "An ontology for representing clinically-relevant anomalies as Information Content Entities that reflect unresolved medical observations or diagnostic uncertainty. MARO models the clinical reasoning and procedural processes that resolve these anomalies over time, including symptom assessment, heuristic decision-making, and treatment assignment, while preserving the ontological distinction between continuant and occurrent entities within bounded temporality."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+<http://www.w3.org/2004/02/skos/core#scopeNote> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/anomaly-resolution-ontology/ARO_0000004
+<http://example.org/anomaly-resolution-ontology/ARO_0000004> rdf:type owl:Class .
+
+
+###  http://example.org/anomaly-resolution-ontology/ARO_0000005
+<http://example.org/anomaly-resolution-ontology/ARO_0000005> rdf:type owl:Class .
+
+
+###  http://example.org/medical-anomaly-resolution-ontology/MARO_0000001
+maro:MARO_0000001 rdf:type owl:Class ;
+                  rdfs:subClassOf <http://example.org/anomaly-resolution-ontology/ARO_0000005> ;
+                  rdfs:label "Medical Detection Model"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A Detection Model Artifact used in clinical, diagnostic, or biomedical contexts to flag anomaly conditions."@en ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Medical Detection Model"@en .
+
+
+###  http://example.org/medical-anomaly-resolution-ontology/MARO_0000002
+maro:MARO_0000002 rdf:type owl:Class ;
+                  rdfs:subClassOf <http://example.org/anomaly-resolution-ontology/ARO_0000004> ;
+                  rdfs:label "Medical Outlier Detection Function"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "An Outlier Detection Function realized by algorithms or heuristics trained for use in clinical, diagnostic, or biomedical anomaly detection contexts."@en ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Medical Outlier Function"@en .
+
+
+###  http://example.org/medical-anomaly-resolution-ontology/MARO_0000003
+maro:MARO_0000003 rdf:type owl:Class ;
+                  rdfs:label "Medical Anomaly"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "An Anomaly that represents unresolved content concerning deviations in the structure or function of an organism, identified through a health-related evaluative process and not yet explained by known biological or pathological mechanisms."@en ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Medical Anomaly"@en ;
+                  <http://www.w3.org/2004/02/skos/core#scopeNote> "This class includes unresolved findings from physiological measurements, imaging, diagnostic tests, or experiential reports, when those findings do not map to a recognized condition. It is scoped to contexts involving health assessment, clinical investigation, or diagnostic reasoning, and persists until the underlying referent is determined or ruled out."@en .
+
+
+###  http://example.org/medical-anomaly-resolution-ontology/MARO_0000004
+maro:MARO_0000004 rdf:type owl:Class ;
+                  rdfs:subClassOf maro:MARO_0000003 ;
+                  rdfs:label "Radiological Anomaly"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A Medical Anomaly representing unresolved content derived from deviations in expected patterns within medical imaging data, such as MRI, CT, or X-ray scans."@en ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Radiological Anomaly"@en .
+
+
+###  http://example.org/medical-anomaly-resolution-ontology/MARO_0000005
+maro:MARO_0000005 rdf:type owl:Class ;
+                  rdfs:subClassOf maro:MARO_0000003 ;
+                  rdfs:label "Biometric Anomaly"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A Medical Anomaly representing unresolved content identified through deviations in vital signs, lab results, or physiological measurements, such as irregular heart rhythms or abnormal blood glucose levels."@en ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Biometric Anomaly"@en .
+
+
+###  http://example.org/medical-anomaly-resolution-ontology/MARO_0000006
+maro:MARO_0000006 rdf:type owl:Class ;
+                  rdfs:subClassOf maro:MARO_0000003 ;
+                  rdfs:label "Symptomatic Anomaly"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A Medical Anomaly that represents unresolved clinical content involving perceptible conditions or patient-reported experiences that cannot be interpreted within an established diagnostic model."@en ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Symptomatic Anomaly"@en ;
+                  <http://www.w3.org/2004/02/skos/core#scopeNote> "This includes qualitative reports or observable features such as pain, fatigue, or swelling, where the underlying cause is unknown, uncertain, or disputed. The anomaly persists until the referent condition is clarified or excluded through clinical reasoning or diagnostic testing."@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
