@@ -310,7 +310,7 @@ aro:ARO_0000015 rdf:type owl:Class ;
                                   owl:someValuesFrom aro:ARO_0000001
                                 ] ;
                 rdfs:label "Anomaly Lifecycle"@en ;
-                skos:definition "An Information Content Entity that describes the full semantic span of an Anomaly, beginning at its detection, progressing through its unresolved state, and ending with an Epistemic Enlightenment Event that enables the Anomaly Resolution."@en ;
+                skos:definition "An Information Content Entity that describes the full semantic span of an Anomaly, beginning at its detection and the start of a Bounded Temporality Interval, progressing through the Anomalies unresolved state into its resolved state, and ending with an Act of Epistemic Enlightenment that marks the end of the Bounded Temporality Interval."@en ;
                 skos:prefLabel "Anomaly Lifecycle"@en .
 
 
